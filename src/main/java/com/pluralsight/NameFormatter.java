@@ -28,11 +28,27 @@ public class NameFormatter {
          //easier for more efficient concatenation
          StringBuilder stringBuild = new StringBuilder();
 
+         //appending/adding the last name
+        stringBuild.append(lastName);
+        stringBuild.append(",");
 
+        //adding/appending prefix if it exists
+        if(!prefix.isEmpty()){
+            stringBuild.append(prefix).append(" ");
+        }
+        //appending/adding first name
+        stringBuild.append(firstName);
 
-
-
-
+        //appending/adding middle name if it exists
+        if(!middleName.isEmpty()){
+            stringBuild.append(" ").append(middleName);
+        }
+        //appending/adding suffix if it exists
+        if(!suffix.isEmpty()){
+            stringBuild.append(", ").append(suffix);
+        }
+        //returning the formatted name string
+        return stringBuild.toString();
     }
 }
 
